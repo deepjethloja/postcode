@@ -1,0 +1,1265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.yell4postcode.co.uk/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.yell4postcode.co.uk/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.yell4postcode.co.uk/">
+      <s:element name="ByPostCodewithCounty">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PostCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="accountno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CountyType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="flgCounty" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ByPostCodewithCountyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ByPostCodewithCountyResult" type="tns:InterimResults" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="InterimResults">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Results" type="tns:ArrayOfAnyType" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfAnyType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="anyType" nillable="true" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="InterimResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description1" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="AddressResults">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Results" type="tns:ArrayOfAnyType" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="FullAddressResults">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Results" type="tns:ArrayOfAnyType" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="FullAddressResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="FullAddress" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DependentLocality" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Posttown" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="County" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Outcome" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Incode" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="AddressResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OrganisationName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BuildingNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SubbuildingName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BuildingName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ThoroughfareName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ThoroughfareDescriptor" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DependentLocality" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Posttown" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="County" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Outcome" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Incode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ByPostCodewithpremises">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PostCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="accountno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CountyType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="flgCounty" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ByPostCodewithpremisesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ByPostCodewithpremisesResult" type="tns:InterimResults" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ByPostCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PostCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="accountno" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ByPostCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ByPostCodeResult" type="tns:InterimResults" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddressByIDWithCounty">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CountyType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="flgCounty" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddressByIDWithCountyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddressByIDWithCountyResult" type="tns:AddressResults" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddressBypostcode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PostCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="accountno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CountyType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="flgCounty" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddressBypostcodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddressBypostcodeResult" type="tns:AddressResults" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddressByID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddressByIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddressByIDResult" type="tns:AddressResults" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAddress">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PostCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="accountno" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAddressResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAddressResult" type="tns:FullAddressResults" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FindAccountNo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AccountNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FindAccountNoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FindAccountNoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddressByStreet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="company" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="building" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="street" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="posttown" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="accountno" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddressByStreetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddressByStreetResult" type="tns:InterimResults" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddressByPostcodeOrTown">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TownOrPostCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="accountno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CountyType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="flgCounty" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddressByPostcodeOrTownResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddressByPostcodeOrTownResult" type="tns:InterimResults" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAddressWithCounty">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PostCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="accountno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CountyType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="flgCounty" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAddressWithCountyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAddressWithCountyResult" type="tns:FullAddressResults" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFullAddressWithCounty">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PostCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="accountno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CountyType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="flgCounty" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFullAddressWithCountyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFullAddressWithCountyResult" type="tns:FullAddressResults" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddressSearchByText">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="orgname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="outcome" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="incode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="accountno" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddressSearchByTextResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddressSearchByTextResult" type="tns:InterimResults" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InterimResults" nillable="true" type="tns:InterimResults" />
+      <s:element name="AddressResults" nillable="true" type="tns:AddressResults" />
+      <s:element name="FullAddressResults" nillable="true" type="tns:FullAddressResults" />
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ByPostCodewithCountySoapIn">
+    <wsdl:part name="parameters" element="tns:ByPostCodewithCounty" />
+  </wsdl:message>
+  <wsdl:message name="ByPostCodewithCountySoapOut">
+    <wsdl:part name="parameters" element="tns:ByPostCodewithCountyResponse" />
+  </wsdl:message>
+  <wsdl:message name="ByPostCodewithpremisesSoapIn">
+    <wsdl:part name="parameters" element="tns:ByPostCodewithpremises" />
+  </wsdl:message>
+  <wsdl:message name="ByPostCodewithpremisesSoapOut">
+    <wsdl:part name="parameters" element="tns:ByPostCodewithpremisesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ByPostCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:ByPostCode" />
+  </wsdl:message>
+  <wsdl:message name="ByPostCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:ByPostCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddressByIDWithCountySoapIn">
+    <wsdl:part name="parameters" element="tns:AddressByIDWithCounty" />
+  </wsdl:message>
+  <wsdl:message name="AddressByIDWithCountySoapOut">
+    <wsdl:part name="parameters" element="tns:AddressByIDWithCountyResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddressBypostcodeSoapIn">
+    <wsdl:part name="parameters" element="tns:AddressBypostcode" />
+  </wsdl:message>
+  <wsdl:message name="AddressBypostcodeSoapOut">
+    <wsdl:part name="parameters" element="tns:AddressBypostcodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddressByIDSoapIn">
+    <wsdl:part name="parameters" element="tns:AddressByID" />
+  </wsdl:message>
+  <wsdl:message name="AddressByIDSoapOut">
+    <wsdl:part name="parameters" element="tns:AddressByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAddressSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAddress" />
+  </wsdl:message>
+  <wsdl:message name="GetAddressSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="FindAccountNoSoapIn">
+    <wsdl:part name="parameters" element="tns:FindAccountNo" />
+  </wsdl:message>
+  <wsdl:message name="FindAccountNoSoapOut">
+    <wsdl:part name="parameters" element="tns:FindAccountNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddressByStreetSoapIn">
+    <wsdl:part name="parameters" element="tns:AddressByStreet" />
+  </wsdl:message>
+  <wsdl:message name="AddressByStreetSoapOut">
+    <wsdl:part name="parameters" element="tns:AddressByStreetResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddressByPostcodeOrTownSoapIn">
+    <wsdl:part name="parameters" element="tns:AddressByPostcodeOrTown" />
+  </wsdl:message>
+  <wsdl:message name="AddressByPostcodeOrTownSoapOut">
+    <wsdl:part name="parameters" element="tns:AddressByPostcodeOrTownResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAddressWithCountySoapIn">
+    <wsdl:part name="parameters" element="tns:GetAddressWithCounty" />
+  </wsdl:message>
+  <wsdl:message name="GetAddressWithCountySoapOut">
+    <wsdl:part name="parameters" element="tns:GetAddressWithCountyResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFullAddressWithCountySoapIn">
+    <wsdl:part name="parameters" element="tns:GetFullAddressWithCounty" />
+  </wsdl:message>
+  <wsdl:message name="GetFullAddressWithCountySoapOut">
+    <wsdl:part name="parameters" element="tns:GetFullAddressWithCountyResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddressSearchByTextSoapIn">
+    <wsdl:part name="parameters" element="tns:AddressSearchByText" />
+  </wsdl:message>
+  <wsdl:message name="AddressSearchByTextSoapOut">
+    <wsdl:part name="parameters" element="tns:AddressSearchByTextResponse" />
+  </wsdl:message>
+  <wsdl:message name="ByPostCodewithCountyHttpGetIn">
+    <wsdl:part name="PostCode" type="s:string" />
+    <wsdl:part name="accountno" type="s:string" />
+    <wsdl:part name="CountyType" type="s:string" />
+    <wsdl:part name="flgCounty" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ByPostCodewithCountyHttpGetOut">
+    <wsdl:part name="Body" element="tns:InterimResults" />
+  </wsdl:message>
+  <wsdl:message name="ByPostCodewithpremisesHttpGetIn">
+    <wsdl:part name="PostCode" type="s:string" />
+    <wsdl:part name="accountno" type="s:string" />
+    <wsdl:part name="CountyType" type="s:string" />
+    <wsdl:part name="flgCounty" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ByPostCodewithpremisesHttpGetOut">
+    <wsdl:part name="Body" element="tns:InterimResults" />
+  </wsdl:message>
+  <wsdl:message name="ByPostCodeHttpGetIn">
+    <wsdl:part name="PostCode" type="s:string" />
+    <wsdl:part name="accountno" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ByPostCodeHttpGetOut">
+    <wsdl:part name="Body" element="tns:InterimResults" />
+  </wsdl:message>
+  <wsdl:message name="AddressByIDWithCountyHttpGetIn">
+    <wsdl:part name="ID" type="s:string" />
+    <wsdl:part name="CountyType" type="s:string" />
+    <wsdl:part name="flgCounty" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddressByIDWithCountyHttpGetOut">
+    <wsdl:part name="Body" element="tns:AddressResults" />
+  </wsdl:message>
+  <wsdl:message name="AddressBypostcodeHttpGetIn">
+    <wsdl:part name="PostCode" type="s:string" />
+    <wsdl:part name="accountno" type="s:string" />
+    <wsdl:part name="CountyType" type="s:string" />
+    <wsdl:part name="flgCounty" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddressBypostcodeHttpGetOut">
+    <wsdl:part name="Body" element="tns:AddressResults" />
+  </wsdl:message>
+  <wsdl:message name="AddressByIDHttpGetIn">
+    <wsdl:part name="ID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddressByIDHttpGetOut">
+    <wsdl:part name="Body" element="tns:AddressResults" />
+  </wsdl:message>
+  <wsdl:message name="GetAddressHttpGetIn">
+    <wsdl:part name="PostCode" type="s:string" />
+    <wsdl:part name="accountno" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAddressHttpGetOut">
+    <wsdl:part name="Body" element="tns:FullAddressResults" />
+  </wsdl:message>
+  <wsdl:message name="FindAccountNoHttpGetIn">
+    <wsdl:part name="AccountNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="FindAccountNoHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="AddressByStreetHttpGetIn">
+    <wsdl:part name="company" type="s:string" />
+    <wsdl:part name="building" type="s:string" />
+    <wsdl:part name="street" type="s:string" />
+    <wsdl:part name="posttown" type="s:string" />
+    <wsdl:part name="accountno" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddressByStreetHttpGetOut">
+    <wsdl:part name="Body" element="tns:InterimResults" />
+  </wsdl:message>
+  <wsdl:message name="AddressByPostcodeOrTownHttpGetIn">
+    <wsdl:part name="TownOrPostCode" type="s:string" />
+    <wsdl:part name="accountno" type="s:string" />
+    <wsdl:part name="CountyType" type="s:string" />
+    <wsdl:part name="flgCounty" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddressByPostcodeOrTownHttpGetOut">
+    <wsdl:part name="Body" element="tns:InterimResults" />
+  </wsdl:message>
+  <wsdl:message name="GetAddressWithCountyHttpGetIn">
+    <wsdl:part name="PostCode" type="s:string" />
+    <wsdl:part name="accountno" type="s:string" />
+    <wsdl:part name="CountyType" type="s:string" />
+    <wsdl:part name="flgCounty" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAddressWithCountyHttpGetOut">
+    <wsdl:part name="Body" element="tns:FullAddressResults" />
+  </wsdl:message>
+  <wsdl:message name="GetFullAddressWithCountyHttpGetIn">
+    <wsdl:part name="PostCode" type="s:string" />
+    <wsdl:part name="accountno" type="s:string" />
+    <wsdl:part name="CountyType" type="s:string" />
+    <wsdl:part name="flgCounty" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFullAddressWithCountyHttpGetOut">
+    <wsdl:part name="Body" element="tns:FullAddressResults" />
+  </wsdl:message>
+  <wsdl:message name="AddressSearchByTextHttpGetIn">
+    <wsdl:part name="orgname" type="s:string" />
+    <wsdl:part name="outcome" type="s:string" />
+    <wsdl:part name="incode" type="s:string" />
+    <wsdl:part name="accountno" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddressSearchByTextHttpGetOut">
+    <wsdl:part name="Body" element="tns:InterimResults" />
+  </wsdl:message>
+  <wsdl:message name="ByPostCodewithCountyHttpPostIn">
+    <wsdl:part name="PostCode" type="s:string" />
+    <wsdl:part name="accountno" type="s:string" />
+    <wsdl:part name="CountyType" type="s:string" />
+    <wsdl:part name="flgCounty" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ByPostCodewithCountyHttpPostOut">
+    <wsdl:part name="Body" element="tns:InterimResults" />
+  </wsdl:message>
+  <wsdl:message name="ByPostCodewithpremisesHttpPostIn">
+    <wsdl:part name="PostCode" type="s:string" />
+    <wsdl:part name="accountno" type="s:string" />
+    <wsdl:part name="CountyType" type="s:string" />
+    <wsdl:part name="flgCounty" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ByPostCodewithpremisesHttpPostOut">
+    <wsdl:part name="Body" element="tns:InterimResults" />
+  </wsdl:message>
+  <wsdl:message name="ByPostCodeHttpPostIn">
+    <wsdl:part name="PostCode" type="s:string" />
+    <wsdl:part name="accountno" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ByPostCodeHttpPostOut">
+    <wsdl:part name="Body" element="tns:InterimResults" />
+  </wsdl:message>
+  <wsdl:message name="AddressByIDWithCountyHttpPostIn">
+    <wsdl:part name="ID" type="s:string" />
+    <wsdl:part name="CountyType" type="s:string" />
+    <wsdl:part name="flgCounty" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddressByIDWithCountyHttpPostOut">
+    <wsdl:part name="Body" element="tns:AddressResults" />
+  </wsdl:message>
+  <wsdl:message name="AddressBypostcodeHttpPostIn">
+    <wsdl:part name="PostCode" type="s:string" />
+    <wsdl:part name="accountno" type="s:string" />
+    <wsdl:part name="CountyType" type="s:string" />
+    <wsdl:part name="flgCounty" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddressBypostcodeHttpPostOut">
+    <wsdl:part name="Body" element="tns:AddressResults" />
+  </wsdl:message>
+  <wsdl:message name="AddressByIDHttpPostIn">
+    <wsdl:part name="ID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddressByIDHttpPostOut">
+    <wsdl:part name="Body" element="tns:AddressResults" />
+  </wsdl:message>
+  <wsdl:message name="GetAddressHttpPostIn">
+    <wsdl:part name="PostCode" type="s:string" />
+    <wsdl:part name="accountno" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAddressHttpPostOut">
+    <wsdl:part name="Body" element="tns:FullAddressResults" />
+  </wsdl:message>
+  <wsdl:message name="FindAccountNoHttpPostIn">
+    <wsdl:part name="AccountNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="FindAccountNoHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="AddressByStreetHttpPostIn">
+    <wsdl:part name="company" type="s:string" />
+    <wsdl:part name="building" type="s:string" />
+    <wsdl:part name="street" type="s:string" />
+    <wsdl:part name="posttown" type="s:string" />
+    <wsdl:part name="accountno" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddressByStreetHttpPostOut">
+    <wsdl:part name="Body" element="tns:InterimResults" />
+  </wsdl:message>
+  <wsdl:message name="AddressByPostcodeOrTownHttpPostIn">
+    <wsdl:part name="TownOrPostCode" type="s:string" />
+    <wsdl:part name="accountno" type="s:string" />
+    <wsdl:part name="CountyType" type="s:string" />
+    <wsdl:part name="flgCounty" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddressByPostcodeOrTownHttpPostOut">
+    <wsdl:part name="Body" element="tns:InterimResults" />
+  </wsdl:message>
+  <wsdl:message name="GetAddressWithCountyHttpPostIn">
+    <wsdl:part name="PostCode" type="s:string" />
+    <wsdl:part name="accountno" type="s:string" />
+    <wsdl:part name="CountyType" type="s:string" />
+    <wsdl:part name="flgCounty" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAddressWithCountyHttpPostOut">
+    <wsdl:part name="Body" element="tns:FullAddressResults" />
+  </wsdl:message>
+  <wsdl:message name="GetFullAddressWithCountyHttpPostIn">
+    <wsdl:part name="PostCode" type="s:string" />
+    <wsdl:part name="accountno" type="s:string" />
+    <wsdl:part name="CountyType" type="s:string" />
+    <wsdl:part name="flgCounty" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFullAddressWithCountyHttpPostOut">
+    <wsdl:part name="Body" element="tns:FullAddressResults" />
+  </wsdl:message>
+  <wsdl:message name="AddressSearchByTextHttpPostIn">
+    <wsdl:part name="orgname" type="s:string" />
+    <wsdl:part name="outcome" type="s:string" />
+    <wsdl:part name="incode" type="s:string" />
+    <wsdl:part name="accountno" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddressSearchByTextHttpPostOut">
+    <wsdl:part name="Body" element="tns:InterimResults" />
+  </wsdl:message>
+  <wsdl:portType name="LookupSoap">
+    <wsdl:operation name="ByPostCodewithCounty">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method used to find Full Address with county option</wsdl:documentation>
+      <wsdl:input message="tns:ByPostCodewithCountySoapIn" />
+      <wsdl:output message="tns:ByPostCodewithCountySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ByPostCodewithpremises">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method used to find Full Address with premises no option. form example: cb8 0nq,8 to get 8 Hamilton Road, Newmarket</wsdl:documentation>
+      <wsdl:input message="tns:ByPostCodewithpremisesSoapIn" />
+      <wsdl:output message="tns:ByPostCodewithpremisesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ByPostCode">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method used to find Full Address</wsdl:documentation>
+      <wsdl:input message="tns:ByPostCodeSoapIn" />
+      <wsdl:output message="tns:ByPostCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddressByIDWithCounty">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method used to find Address by AddressID with to county field display or not</wsdl:documentation>
+      <wsdl:input message="tns:AddressByIDWithCountySoapIn" />
+      <wsdl:output message="tns:AddressByIDWithCountySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddressBypostcode">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method used to find Address by postcode and it return back the street, town, county</wsdl:documentation>
+      <wsdl:input message="tns:AddressBypostcodeSoapIn" />
+      <wsdl:output message="tns:AddressBypostcodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddressByID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method used to find Address by AddressID</wsdl:documentation>
+      <wsdl:input message="tns:AddressByIDSoapIn" />
+      <wsdl:output message="tns:AddressByIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAddress">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method used to find Full Address</wsdl:documentation>
+      <wsdl:input message="tns:GetAddressSoapIn" />
+      <wsdl:output message="tns:GetAddressSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FindAccountNo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method used to find Account no</wsdl:documentation>
+      <wsdl:input message="tns:FindAccountNoSoapIn" />
+      <wsdl:output message="tns:FindAccountNoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddressByStreet">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method used to find Full Address by Company name, building, street and post town</wsdl:documentation>
+      <wsdl:input message="tns:AddressByStreetSoapIn" />
+      <wsdl:output message="tns:AddressByStreetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddressByPostcodeOrTown">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method used to find Full Address by Town Or Post Code i.e. Enter cumberland,reading Or ab123ax</wsdl:documentation>
+      <wsdl:input message="tns:AddressByPostcodeOrTownSoapIn" />
+      <wsdl:output message="tns:AddressByPostcodeOrTownSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAddressWithCounty">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method used to find Full Address With County</wsdl:documentation>
+      <wsdl:input message="tns:GetAddressWithCountySoapIn" />
+      <wsdl:output message="tns:GetAddressWithCountySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFullAddressWithCounty">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method used to Get Full Address With County</wsdl:documentation>
+      <wsdl:input message="tns:GetFullAddressWithCountySoapIn" />
+      <wsdl:output message="tns:GetFullAddressWithCountySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddressSearchByText">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method used to find Full Address by Company name, building, street and post town</wsdl:documentation>
+      <wsdl:input message="tns:AddressSearchByTextSoapIn" />
+      <wsdl:output message="tns:AddressSearchByTextSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="LookupHttpGet">
+    <wsdl:operation name="ByPostCodewithCounty">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method used to find Full Address with county option</wsdl:documentation>
+      <wsdl:input message="tns:ByPostCodewithCountyHttpGetIn" />
+      <wsdl:output message="tns:ByPostCodewithCountyHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ByPostCodewithpremises">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method used to find Full Address with premises no option. form example: cb8 0nq,8 to get 8 Hamilton Road, Newmarket</wsdl:documentation>
+      <wsdl:input message="tns:ByPostCodewithpremisesHttpGetIn" />
+      <wsdl:output message="tns:ByPostCodewithpremisesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ByPostCode">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method used to find Full Address</wsdl:documentation>
+      <wsdl:input message="tns:ByPostCodeHttpGetIn" />
+      <wsdl:output message="tns:ByPostCodeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddressByIDWithCounty">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method used to find Address by AddressID with to county field display or not</wsdl:documentation>
+      <wsdl:input message="tns:AddressByIDWithCountyHttpGetIn" />
+      <wsdl:output message="tns:AddressByIDWithCountyHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddressBypostcode">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method used to find Address by postcode and it return back the street, town, county</wsdl:documentation>
+      <wsdl:input message="tns:AddressBypostcodeHttpGetIn" />
+      <wsdl:output message="tns:AddressBypostcodeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddressByID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method used to find Address by AddressID</wsdl:documentation>
+      <wsdl:input message="tns:AddressByIDHttpGetIn" />
+      <wsdl:output message="tns:AddressByIDHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAddress">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method used to find Full Address</wsdl:documentation>
+      <wsdl:input message="tns:GetAddressHttpGetIn" />
+      <wsdl:output message="tns:GetAddressHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FindAccountNo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method used to find Account no</wsdl:documentation>
+      <wsdl:input message="tns:FindAccountNoHttpGetIn" />
+      <wsdl:output message="tns:FindAccountNoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddressByStreet">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method used to find Full Address by Company name, building, street and post town</wsdl:documentation>
+      <wsdl:input message="tns:AddressByStreetHttpGetIn" />
+      <wsdl:output message="tns:AddressByStreetHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddressByPostcodeOrTown">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method used to find Full Address by Town Or Post Code i.e. Enter cumberland,reading Or ab123ax</wsdl:documentation>
+      <wsdl:input message="tns:AddressByPostcodeOrTownHttpGetIn" />
+      <wsdl:output message="tns:AddressByPostcodeOrTownHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAddressWithCounty">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method used to find Full Address With County</wsdl:documentation>
+      <wsdl:input message="tns:GetAddressWithCountyHttpGetIn" />
+      <wsdl:output message="tns:GetAddressWithCountyHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFullAddressWithCounty">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method used to Get Full Address With County</wsdl:documentation>
+      <wsdl:input message="tns:GetFullAddressWithCountyHttpGetIn" />
+      <wsdl:output message="tns:GetFullAddressWithCountyHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddressSearchByText">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method used to find Full Address by Company name, building, street and post town</wsdl:documentation>
+      <wsdl:input message="tns:AddressSearchByTextHttpGetIn" />
+      <wsdl:output message="tns:AddressSearchByTextHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="LookupHttpPost">
+    <wsdl:operation name="ByPostCodewithCounty">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method used to find Full Address with county option</wsdl:documentation>
+      <wsdl:input message="tns:ByPostCodewithCountyHttpPostIn" />
+      <wsdl:output message="tns:ByPostCodewithCountyHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ByPostCodewithpremises">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method used to find Full Address with premises no option. form example: cb8 0nq,8 to get 8 Hamilton Road, Newmarket</wsdl:documentation>
+      <wsdl:input message="tns:ByPostCodewithpremisesHttpPostIn" />
+      <wsdl:output message="tns:ByPostCodewithpremisesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ByPostCode">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method used to find Full Address</wsdl:documentation>
+      <wsdl:input message="tns:ByPostCodeHttpPostIn" />
+      <wsdl:output message="tns:ByPostCodeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddressByIDWithCounty">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method used to find Address by AddressID with to county field display or not</wsdl:documentation>
+      <wsdl:input message="tns:AddressByIDWithCountyHttpPostIn" />
+      <wsdl:output message="tns:AddressByIDWithCountyHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddressBypostcode">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method used to find Address by postcode and it return back the street, town, county</wsdl:documentation>
+      <wsdl:input message="tns:AddressBypostcodeHttpPostIn" />
+      <wsdl:output message="tns:AddressBypostcodeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddressByID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method used to find Address by AddressID</wsdl:documentation>
+      <wsdl:input message="tns:AddressByIDHttpPostIn" />
+      <wsdl:output message="tns:AddressByIDHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAddress">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method used to find Full Address</wsdl:documentation>
+      <wsdl:input message="tns:GetAddressHttpPostIn" />
+      <wsdl:output message="tns:GetAddressHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FindAccountNo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method used to find Account no</wsdl:documentation>
+      <wsdl:input message="tns:FindAccountNoHttpPostIn" />
+      <wsdl:output message="tns:FindAccountNoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddressByStreet">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method used to find Full Address by Company name, building, street and post town</wsdl:documentation>
+      <wsdl:input message="tns:AddressByStreetHttpPostIn" />
+      <wsdl:output message="tns:AddressByStreetHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddressByPostcodeOrTown">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method used to find Full Address by Town Or Post Code i.e. Enter cumberland,reading Or ab123ax</wsdl:documentation>
+      <wsdl:input message="tns:AddressByPostcodeOrTownHttpPostIn" />
+      <wsdl:output message="tns:AddressByPostcodeOrTownHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAddressWithCounty">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method used to find Full Address With County</wsdl:documentation>
+      <wsdl:input message="tns:GetAddressWithCountyHttpPostIn" />
+      <wsdl:output message="tns:GetAddressWithCountyHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFullAddressWithCounty">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method used to Get Full Address With County</wsdl:documentation>
+      <wsdl:input message="tns:GetFullAddressWithCountyHttpPostIn" />
+      <wsdl:output message="tns:GetFullAddressWithCountyHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddressSearchByText">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method used to find Full Address by Company name, building, street and post town</wsdl:documentation>
+      <wsdl:input message="tns:AddressSearchByTextHttpPostIn" />
+      <wsdl:output message="tns:AddressSearchByTextHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="LookupSoap" type="tns:LookupSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ByPostCodewithCounty">
+      <soap:operation soapAction="http://www.yell4postcode.co.uk/ByPostCodewithCounty" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ByPostCodewithpremises">
+      <soap:operation soapAction="http://www.yell4postcode.co.uk/ByPostCodewithpremises" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ByPostCode">
+      <soap:operation soapAction="http://www.yell4postcode.co.uk/ByPostCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddressByIDWithCounty">
+      <soap:operation soapAction="http://www.yell4postcode.co.uk/AddressByIDWithCounty" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddressBypostcode">
+      <soap:operation soapAction="http://www.yell4postcode.co.uk/AddressBypostcode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddressByID">
+      <soap:operation soapAction="http://www.yell4postcode.co.uk/AddressByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAddress">
+      <soap:operation soapAction="http://www.yell4postcode.co.uk/GetAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindAccountNo">
+      <soap:operation soapAction="http://www.yell4postcode.co.uk/FindAccountNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddressByStreet">
+      <soap:operation soapAction="http://www.yell4postcode.co.uk/AddressByStreet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddressByPostcodeOrTown">
+      <soap:operation soapAction="http://www.yell4postcode.co.uk/AddressByPostcodeOrTown" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAddressWithCounty">
+      <soap:operation soapAction="http://www.yell4postcode.co.uk/GetAddressWithCounty" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFullAddressWithCounty">
+      <soap:operation soapAction="http://www.yell4postcode.co.uk/GetFullAddressWithCounty" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddressSearchByText">
+      <soap:operation soapAction="http://www.yell4postcode.co.uk/AddressSearchByText" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="LookupSoap12" type="tns:LookupSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ByPostCodewithCounty">
+      <soap12:operation soapAction="http://www.yell4postcode.co.uk/ByPostCodewithCounty" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ByPostCodewithpremises">
+      <soap12:operation soapAction="http://www.yell4postcode.co.uk/ByPostCodewithpremises" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ByPostCode">
+      <soap12:operation soapAction="http://www.yell4postcode.co.uk/ByPostCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddressByIDWithCounty">
+      <soap12:operation soapAction="http://www.yell4postcode.co.uk/AddressByIDWithCounty" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddressBypostcode">
+      <soap12:operation soapAction="http://www.yell4postcode.co.uk/AddressBypostcode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddressByID">
+      <soap12:operation soapAction="http://www.yell4postcode.co.uk/AddressByID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAddress">
+      <soap12:operation soapAction="http://www.yell4postcode.co.uk/GetAddress" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindAccountNo">
+      <soap12:operation soapAction="http://www.yell4postcode.co.uk/FindAccountNo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddressByStreet">
+      <soap12:operation soapAction="http://www.yell4postcode.co.uk/AddressByStreet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddressByPostcodeOrTown">
+      <soap12:operation soapAction="http://www.yell4postcode.co.uk/AddressByPostcodeOrTown" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAddressWithCounty">
+      <soap12:operation soapAction="http://www.yell4postcode.co.uk/GetAddressWithCounty" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFullAddressWithCounty">
+      <soap12:operation soapAction="http://www.yell4postcode.co.uk/GetFullAddressWithCounty" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddressSearchByText">
+      <soap12:operation soapAction="http://www.yell4postcode.co.uk/AddressSearchByText" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="LookupHttpGet" type="tns:LookupHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="ByPostCodewithCounty">
+      <http:operation location="/ByPostCodewithCounty" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ByPostCodewithpremises">
+      <http:operation location="/ByPostCodewithpremises" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ByPostCode">
+      <http:operation location="/ByPostCode" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddressByIDWithCounty">
+      <http:operation location="/AddressByIDWithCounty" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddressBypostcode">
+      <http:operation location="/AddressBypostcode" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddressByID">
+      <http:operation location="/AddressByID" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAddress">
+      <http:operation location="/GetAddress" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindAccountNo">
+      <http:operation location="/FindAccountNo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddressByStreet">
+      <http:operation location="/AddressByStreet" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddressByPostcodeOrTown">
+      <http:operation location="/AddressByPostcodeOrTown" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAddressWithCounty">
+      <http:operation location="/GetAddressWithCounty" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFullAddressWithCounty">
+      <http:operation location="/GetFullAddressWithCounty" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddressSearchByText">
+      <http:operation location="/AddressSearchByText" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="LookupHttpPost" type="tns:LookupHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="ByPostCodewithCounty">
+      <http:operation location="/ByPostCodewithCounty" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ByPostCodewithpremises">
+      <http:operation location="/ByPostCodewithpremises" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ByPostCode">
+      <http:operation location="/ByPostCode" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddressByIDWithCounty">
+      <http:operation location="/AddressByIDWithCounty" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddressBypostcode">
+      <http:operation location="/AddressBypostcode" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddressByID">
+      <http:operation location="/AddressByID" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAddress">
+      <http:operation location="/GetAddress" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindAccountNo">
+      <http:operation location="/FindAccountNo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddressByStreet">
+      <http:operation location="/AddressByStreet" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddressByPostcodeOrTown">
+      <http:operation location="/AddressByPostcodeOrTown" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAddressWithCounty">
+      <http:operation location="/GetAddressWithCounty" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFullAddressWithCounty">
+      <http:operation location="/GetFullAddressWithCounty" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddressSearchByText">
+      <http:operation location="/AddressSearchByText" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Lookup">
+    <wsdl:port name="LookupSoap" binding="tns:LookupSoap">
+      <soap:address location="http://lookup.yell4postcode.co.uk/lookup.asmx" />
+    </wsdl:port>
+    <wsdl:port name="LookupSoap12" binding="tns:LookupSoap12">
+      <soap12:address location="http://lookup.yell4postcode.co.uk/lookup.asmx" />
+    </wsdl:port>
+    <wsdl:port name="LookupHttpGet" binding="tns:LookupHttpGet">
+      <http:address location="http://lookup.yell4postcode.co.uk/lookup.asmx" />
+    </wsdl:port>
+    <wsdl:port name="LookupHttpPost" binding="tns:LookupHttpPost">
+      <http:address location="http://lookup.yell4postcode.co.uk/lookup.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

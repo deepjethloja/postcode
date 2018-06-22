@@ -1,0 +1,9 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="WebApplication2.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="WebApplication2_uk_co_yell4postcode_lookup_Lookup" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://lookup.yell4postcode.co.uk/lookup.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
